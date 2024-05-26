@@ -1,9 +1,11 @@
 import './App.css'
 import Navbar from './Navbar';
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { uploadCsv } from './services';
 
 export default function Classify() {
+    const navigate = useNavigate();
+
     const sendFile = async (file, option) => {
         try {
             const blob = await uploadCsv(file, option);
@@ -11,11 +13,13 @@ export default function Classify() {
             const a = document.createElement('a');
             a.style.display = 'none';
             a.href = url;
-            a.download = 'result.csv'; // You can customize the file name
+            a.download = 'result.csv';
             document.body.appendChild(a);
             a.click();
             window.URL.revokeObjectURL(url);
             console.log('Arquivo enviado com sucesso!');
+
+            navigate('/results', { state: { file: blob } });
         } catch (error) {
             alert('Erro ao enviar o arquivo: ' + error.message);
         }
