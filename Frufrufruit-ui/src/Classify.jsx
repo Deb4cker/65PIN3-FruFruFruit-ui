@@ -9,16 +9,7 @@ export default function Classify() {
     const sendFile = async (file, option) => {
         try {
             const blob = await uploadCsv(file, option);
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.style.display = 'none';
-            a.href = url;
-            a.download = 'result.csv';
-            document.body.appendChild(a);
-            a.click();
-            window.URL.revokeObjectURL(url);
             console.log('Arquivo enviado com sucesso!');
-
             navigate('/results', { state: { file: blob } });
         } catch (error) {
             alert('Erro ao enviar o arquivo: ' + error.message);
@@ -26,10 +17,18 @@ export default function Classify() {
     };
 
     const handleSubmit = (event) => {
+        let option = '';
         event.preventDefault();
         const file = document.getElementById('fileInput').files[0];
-        const option = document.querySelector('input[name="classificationMethod"]:checked').value;
-        sendFile(file, option);
+        try{
+            option = document.querySelector('input[name="classificationMethod"]:checked').value;
+        } catch (error){
+            alert('Selecione um método de classificação!')
+        }
+        
+        if(!file) 
+            alert('Selecione um arquivo!');
+        else sendFile(file, option);
     };
 
     return (
