@@ -41,3 +41,32 @@ formItems {
   display: flex;
   justify-items: 'space-between';
 }
+
+table {
+  border: #89CD5F;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+}
+
+.table-container {
+  width: 100%;
+  max-width: 1200px; /* Adjust the width as needed */
+  height: 600px; /* Adjust the height as needed */
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin: 20px auto;
+  background-color: white;
+}
+
+th, td {
+  text-align: left;
+  border: 2px solid #6ac440;
+  padding: 8px;
+  border-color: rgb(45, 87, 42);
+}
+
+th {
+  background-color: #f2f2f2;
+}
