@@ -1,6 +1,6 @@
-#FruFruFruit-Ui
+# FruFruFruit-Ui
 
-###Instruções para execução da Ui:
+### Instruções para execução da Ui:
 
 1. Clone o repositório;
 2. Vá para a pasta do projeto utilizando ```cd 65PIN3-FruFruFruit-ui\Frufrufruit-Ui```
