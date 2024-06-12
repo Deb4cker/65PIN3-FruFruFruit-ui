@@ -1,5 +1,7 @@
 # FruFruFruit-Ui
 
+> Nota: A API deste projeto consta no seguinte [repositório](https://github.com/Deb4cker/65PINIII-FruFruFruit). Execute a api para utilizar as funcionaldades do projeto.
+
 ### Instruções para execução da Ui:
 
 1. Clone o repositório;
